@@ -1,0 +1,117 @@
+{
+  "redux component": {
+    "prefix": "redcom",
+    "body": [
+      "import React from 'react';",
+      "import { connect } from 'react-redux';",
+      "",
+      "export default connect(state => state)(({ $1 dispatch }) => (",
+      "  $2",
+      "));"
+    ],
+    "description": "Create empty redux component"
+  },
+  "styled redux component": {
+    "prefix": "redcom styled",
+    "body": [
+      "import React from 'react';",
+      "import { connect } from 'react-redux';",
+      "import styled from 'styled-components';",
+      "",
+      "export default connect(state => state)(({ $1 dispatch }) => (",
+      "  $2",
+      "));"
+    ],
+    "description": "Create empty styled redux component"
+  },
+  "stateless component": {
+    "prefix": "statecom",
+    "body": [
+      "import React from 'react';",
+      "",
+      "export default ($1) => (",
+      "  $2",
+      ");"
+    ],
+    "description": "Create empty component"
+  },
+  "styled stateless component": {
+    "prefix": "statecom styled",
+    "body": [
+      "import React from 'react';",
+      "import styled from 'styled-components';",
+      "",
+      "export default ($1) => (",
+      "  $2",
+      ");"
+    ],
+    "description": "Create empty styled component"
+  },
+  "reducer": {
+    "prefix": "reducer",
+    "body": [
+      "import { $1 } from '../actions';",
+      "",
+      "export default (state = $2, {type, payload}) => {",
+      "  switch(type) {",
+      "    case $3:",
+      "    default:",
+      "      return state;",
+      "  }",
+      "}"
+    ],
+    "description": "Create basic Reducer"
+  },
+  "saga take put": {
+    "prefix": "saga take put",
+    "body": [
+      "import { take, put$1 } from 'redux-saga/effects';",
+      "import { $2, $3 } from '../actions';",
+      "",
+      "export default function*() {",
+      "  const action = yield take($2);",
+      "  $4",
+      "  yield put({",
+      "    type: $3,",
+      "    payload: $5",
+      "  });",
+      "}"
+    ],
+    "description": "Create basic take put saga"
+  },
+  "saga take call put": {
+    "prefix": "saga take call put",
+    "body": [
+      "import { take, put, call$1 } from 'redux-saga/effects';",
+      "import { $2, $3 } from '../actions';",
+      "import { $4 } from '../api';",
+      "",
+      "export default function*() {",
+      "  const action = yield take($2);",
+      "  const payload = call($4);",
+      "  yield put({",
+      "    type: $3,",
+      "    payload",
+      "   });",
+      "}"
+    ],
+    "description": "Create basic take call put saga"
+  },
+  "saga call put": {
+    "prefix": "saga call put",
+    "body": [
+      "import { put, call$1 } from 'redux-saga/effects';",
+      "import { $2 } from '../actions';",
+      "import { $4 } from '../api';",
+      "",
+      "export default function*() {",
+      "  const payload = call($4);",
+      "  yield put({",
+      "    type: $2,",
+      "    payload",
+      "   });",
+      "}"
+    ],
+    "description": "Create basic take call put saga"
+  }
+}
